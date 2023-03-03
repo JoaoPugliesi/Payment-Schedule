@@ -46,9 +46,6 @@ public class UserServiceImpl implements UserService{
         if(dto.getCpf() != null) {
             entity.setCpf(dto.getCpf());
         }
-        if(dto.getName() != null) {
-            entity.setName(dto.getName());
-        }
         repository.save(entity);
         return new UserDto(entity);
     }
