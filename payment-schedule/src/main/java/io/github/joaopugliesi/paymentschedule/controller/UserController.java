@@ -45,6 +45,8 @@ public class UserController {
         return dto;
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public UserDto delete(@PathVariable Long id) {
         service.delete(id);
         return null;
