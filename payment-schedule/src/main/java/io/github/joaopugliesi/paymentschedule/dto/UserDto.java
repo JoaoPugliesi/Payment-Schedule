@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.br.CPF;
+
+import javax.validation.constraints.Email;
 
 @Setter
 @Getter
@@ -13,8 +16,10 @@ import lombok.Setter;
 public class UserDto {
 
     private String name;
+    @CPF
     private String cpf;
     private String phone;
+    @Email
     private String email;
 
     public UserDto(User user) {
