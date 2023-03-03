@@ -11,6 +11,7 @@ public interface UserService {
     UserDto save(UserDto dto);
     Page<UserDto>findAll(Pageable pageable);
     Optional<UserDto> findById(Long id);
+    UserDto update(Long id, UserDto dto);
     void delete(Long id);
 
 

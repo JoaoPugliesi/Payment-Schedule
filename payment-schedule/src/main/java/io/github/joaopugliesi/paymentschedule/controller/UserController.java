@@ -38,10 +38,10 @@ public class UserController {
         return dto;
     }
 
-    @PatchMapping
+    @PatchMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public UserDto update(@PathVariable Long id, @RequestBody UserDto dto) {
-        dto = service.save(dto);
+        dto = service.update(id, dto);
         return dto;
     }
 

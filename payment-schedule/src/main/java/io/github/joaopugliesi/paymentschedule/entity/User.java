@@ -1,11 +1,13 @@
 package io.github.joaopugliesi.paymentschedule.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Setter
@@ -27,4 +29,6 @@ public class User {
     private String phone;
     @Column(name = "user_email", length = 40, nullable = false)
     private String email;
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    private LocalDateTime date;
 }
