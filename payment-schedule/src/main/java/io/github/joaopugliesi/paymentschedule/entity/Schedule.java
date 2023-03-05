@@ -26,10 +26,7 @@ public class Schedule extends AbstractEntity{
     @Enumerated(EnumType.STRING)
     @Column(name = "tb_status")
     private StatusPayment status;
-    @ManyToMany
-    @JoinTable(
-            name = "tb_schedule_user",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "schedule_id"))
-    List<Schedule> scheduleList;
+    @ManyToOne
+    @JoinColumn(name = "schedule_user")
+    private User users;
 }

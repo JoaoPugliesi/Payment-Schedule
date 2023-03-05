@@ -51,6 +51,7 @@ public class ScheduleServiceImpl implements ScheduleService {
         if(entity.getStatus() == StatusPayment.PAID) {
             this.validationStatus(entity);
         }
+        entity.setStatus(dto.getStatus());
         entity.setUpdateDate(LocalDateTime.now());
         repository.save(entity);
         return new ScheduleDto(entity);
