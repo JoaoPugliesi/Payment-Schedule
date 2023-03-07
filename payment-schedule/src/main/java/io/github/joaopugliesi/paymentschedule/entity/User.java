@@ -33,4 +33,7 @@ public class User extends AbstractEntity{
     @Email
     @Column(name = "user_email", length = 40, nullable = false)
     private String email;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "users")
+    @JoinColumn(name = "user_id")
+    private List<Schedule> schedules;
 }

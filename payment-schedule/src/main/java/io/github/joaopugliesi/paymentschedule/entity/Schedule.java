@@ -27,6 +27,6 @@ public class Schedule extends AbstractEntity{
     @Column(name = "tb_status")
     private StatusPayment status;
     @ManyToOne
-    @JoinColumn(name = "schedule_user")
+    @JoinColumn(name = "user_id")
     private User users;
 }
