@@ -1,6 +1,7 @@
 package io.github.joaopugliesi.paymentschedule.service;
 
 import io.github.joaopugliesi.paymentschedule.dto.ScheduleDto;
+import io.github.joaopugliesi.paymentschedule.entity.StatusPayment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

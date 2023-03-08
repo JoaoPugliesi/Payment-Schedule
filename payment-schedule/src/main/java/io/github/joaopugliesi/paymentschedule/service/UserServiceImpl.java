@@ -1,6 +1,7 @@
 package io.github.joaopugliesi.paymentschedule.service;
 
 import io.github.joaopugliesi.paymentschedule.dto.UserDto;
+import io.github.joaopugliesi.paymentschedule.entity.Schedule;
 import io.github.joaopugliesi.paymentschedule.entity.User;
 import io.github.joaopugliesi.paymentschedule.service.exception.BadRequestException;
 import io.github.joaopugliesi.paymentschedule.service.exception.NotFoundException;
@@ -26,6 +27,7 @@ public class UserServiceImpl implements UserService{
         BeanUtils.copyProperties(dto, entity);
         this.validationCPF(entity);
         entity.setCreateDate(LocalDateTime.now());
+        entity.setSchedules(dto.getSchedules());
         repository.save(entity);
         return dto;
     }

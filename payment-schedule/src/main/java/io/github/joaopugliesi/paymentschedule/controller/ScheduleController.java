@@ -1,6 +1,8 @@
 package io.github.joaopugliesi.paymentschedule.controller;
 
 import io.github.joaopugliesi.paymentschedule.dto.ScheduleDto;
+import io.github.joaopugliesi.paymentschedule.dto.UserDto;
+import io.github.joaopugliesi.paymentschedule.entity.StatusPayment;
 import io.github.joaopugliesi.paymentschedule.service.ScheduleServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

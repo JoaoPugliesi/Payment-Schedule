@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+import static io.github.joaopugliesi.paymentschedule.entity.StatusPayment.PENDING;
+
 @Service
 @RequiredArgsConstructor
 public class ScheduleServiceImpl implements ScheduleService {
@@ -29,6 +31,7 @@ public class ScheduleServiceImpl implements ScheduleService {
         BeanUtils.copyProperties(dto, entity);
         entity.setCreateDate(LocalDateTime.now());
         entity.setStatus(StatusPayment.PENDING);
+        entity.setUsers(dto.getUser());
         repository.save(entity);
         return dto;
     }
@@ -60,7 +63,8 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     @Override
     public void delete(Long id) {
-
+        repository.findById(id).orElseThrow(()-> new NotFoundException("Agendamento de " + id + " não encontrado!"));
+        repository.deleteById(id);
     }
 
     private void validationStatus(Schedule entity) {
